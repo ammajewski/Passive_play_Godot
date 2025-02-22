@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://xdulfotchxb0"]
+
+[ext_resource type="Script" path="res://Scripts/scenemanager.gd" id="1_54fi6"]
+[ext_resource type="PackedScene" uid="uid://bu7qggin7o4yv" path="res://Scenes/startscreen.tscn" id="2_qp1db"]
+[ext_resource type="PackedScene" uid="uid://ba3d3fk6yyf5k" path="res://Scenes/game_screen.tscn" id="3_ek7es"]
+
+[node name="SceneManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54fi6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IntroPanelScreen" parent="." instance=ExtResource("2_qp1db")]
+
+[node name="GameScreen" parent="." instance=ExtResource("3_ek7es")]
+visible = false
+
+[connection signal="new_game" from="IntroPanelScreen" to="." method="_on_intro_panel_screen_new_game"]
+[connection signal="clay_bar_done" from="GameScreen" to="." method="_on_game_screen_clay_bar_done"]
+[connection signal="clay_plus_btn_pressed" from="GameScreen" to="." method="_on_game_screen_clay_plus_btn_pressed"]
+[connection signal="clay_sub_btn_pressed" from="GameScreen" to="." method="_on_game_screen_clay_sub_btn_pressed"]
+[connection signal="day_night_done" from="GameScreen" to="." method="_on_game_screen_day_night_done"]
+[connection signal="food_bar_done" from="GameScreen" to="." method="_on_game_screen_food_bar_done"]
+[connection signal="food_plus_btn_pressed" from="GameScreen" to="." method="_on_game_screen_food_plus_btn_pressed"]
+[connection signal="food_sub_btn_pressed" from="GameScreen" to="." method="_on_game_screen_food_sub_btn_pressed"]
+[connection signal="mud_bar_done" from="GameScreen" to="." method="_on_game_screen_mud_bar_done"]
+[connection signal="mud_plus_btn_pressed" from="GameScreen" to="." method="_on_game_screen_mud_plus_btn_pressed"]
+[connection signal="mud_sub_btn_pressed" from="GameScreen" to="." method="_on_game_screen_mud_sub_btn_pressed"]
+[connection signal="stick_plus_btn_pressed" from="GameScreen" to="." method="_on_game_screen_stick_plus_btn_pressed"]
+[connection signal="stick_sub_btn_pressed" from="GameScreen" to="." method="_on_game_screen_stick_sub_btn_pressed"]
+[connection signal="sticks_bar_done" from="GameScreen" to="." method="_on_game_screen_sticks_bar_done"]
+[connection signal="stone_bar_done" from="GameScreen" to="." method="_on_game_screen_stone_bar_done"]
+[connection signal="stone_plus_btn_pressed" from="GameScreen" to="." method="_on_game_screen_stone_plus_btn_pressed"]
+[connection signal="stone_sub_btn_pressed" from="GameScreen" to="." method="_on_game_screen_stone_sub_btn_pressed"]

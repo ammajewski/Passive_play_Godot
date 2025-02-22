@@ -1,0 +1,436 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba3d3fk6yyf5k"]
+
+[ext_resource type="Theme" uid="uid://db2b7sksanabd" path="res://BandW.tres" id="1_oubqw"]
+[ext_resource type="Script" path="res://Scripts/game_screen.gd" id="1_qyb4i"]
+
+[node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_qyb4i")
+
+[node name="VillagerStats" type="Panel" parent="."]
+offset_right = 304.0
+offset_bottom = 400.0
+theme = ExtResource("1_oubqw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VillagerStats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VillagerStatusLabel" type="Label" parent="VillagerStats/VBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 1
+text = "Village Stats
+"
+horizontal_alignment = 1
+
+[node name="VillageName" type="Label" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+text = "My Village"
+horizontal_alignment = 1
+
+[node name="PopulationAndWorking" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PopulationLabel" type="Label" parent="VillagerStats/VBoxContainer/PopulationAndWorking"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Population"
+horizontal_alignment = 2
+
+[node name="PopNumber" type="Label" parent="VillagerStats/VBoxContainer/PopulationAndWorking"]
+layout_mode = 2
+text = "00 / 00"
+horizontal_alignment = 1
+
+[node name="WorkingLabel" type="Label" parent="VillagerStats/VBoxContainer/PopulationAndWorking"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Working"
+horizontal_alignment = 2
+
+[node name="WorkNumber" type="Label" parent="VillagerStats/VBoxContainer/PopulationAndWorking"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="DeadAndInVillage" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="DeadLabel" type="Label" parent="VillagerStats/VBoxContainer/DeadAndInVillage"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Dead"
+horizontal_alignment = 2
+
+[node name="DeadNumber" type="Label" parent="VillagerStats/VBoxContainer/DeadAndInVillage"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="InVillageLabel" type="Label" parent="VillagerStats/VBoxContainer/DeadAndInVillage"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "In Village"
+horizontal_alignment = 2
+
+[node name="InVillageNumber" type="Label" parent="VillagerStats/VBoxContainer/DeadAndInVillage"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="Resorces" type="Label" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+text = "Resorces"
+horizontal_alignment = 1
+
+[node name="Food" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VillagerStats/VBoxContainer/Food"]
+layout_mode = 2
+text = "Food"
+
+[node name="Number" type="Label" parent="VillagerStats/VBoxContainer/Food"]
+layout_mode = 2
+text = "00 / 00"
+horizontal_alignment = 1
+
+[node name="SticksStones" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Sticks" type="Label" parent="VillagerStats/VBoxContainer/SticksStones"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Sticks"
+horizontal_alignment = 2
+
+[node name="SticksNumber" type="Label" parent="VillagerStats/VBoxContainer/SticksStones"]
+layout_mode = 2
+text = "00 / 00"
+horizontal_alignment = 1
+
+[node name="Stones" type="Label" parent="VillagerStats/VBoxContainer/SticksStones"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Stones"
+horizontal_alignment = 2
+
+[node name="StonesNumber" type="Label" parent="VillagerStats/VBoxContainer/SticksStones"]
+layout_mode = 2
+text = "00 / 00"
+horizontal_alignment = 1
+
+[node name="MudClay" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="LabelLeft" type="Label" parent="VillagerStats/VBoxContainer/MudClay"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Mud"
+horizontal_alignment = 2
+
+[node name="MudNumber" type="Label" parent="VillagerStats/VBoxContainer/MudClay"]
+layout_mode = 2
+text = "00 / 00"
+horizontal_alignment = 1
+
+[node name="LabelRight" type="Label" parent="VillagerStats/VBoxContainer/MudClay"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Clay"
+horizontal_alignment = 2
+
+[node name="ClayNumber" type="Label" parent="VillagerStats/VBoxContainer/MudClay"]
+layout_mode = 2
+text = "00 / 00"
+horizontal_alignment = 1
+
+[node name="JobLevels" type="Label" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+text = "Jobs Stats
+"
+horizontal_alignment = 1
+
+[node name="ForagingLevel" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VillagerStats/VBoxContainer/ForagingLevel"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Foraging Level"
+
+[node name="Number" type="Label" parent="VillagerStats/VBoxContainer/ForagingLevel"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "00"
+horizontal_alignment = 2
+
+[node name="ForagingPerWorker" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VillagerStats/VBoxContainer/ForagingPerWorker"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Foraging Per Worker"
+
+[node name="Number" type="Label" parent="VillagerStats/VBoxContainer/ForagingPerWorker"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "+00"
+horizontal_alignment = 2
+
+[node name="Space" type="Label" parent="VillagerStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 2
+
+[node name="GatheringLevel" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VillagerStats/VBoxContainer/GatheringLevel"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Gathering Level"
+
+[node name="Number" type="Label" parent="VillagerStats/VBoxContainer/GatheringLevel"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "00"
+horizontal_alignment = 2
+
+[node name="GatheringPerWorker" type="HBoxContainer" parent="VillagerStats/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VillagerStats/VBoxContainer/GatheringPerWorker"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Gathering Per Worker"
+horizontal_alignment = 2
+
+[node name="Number" type="Label" parent="VillagerStats/VBoxContainer/GatheringPerWorker"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "+00"
+horizontal_alignment = 2
+
+[node name="Jobs" type="Panel" parent="."]
+offset_left = 312.0
+offset_right = 656.0
+offset_bottom = 400.0
+theme = ExtResource("1_oubqw")
+
+[node name="JobsEntitys" type="VBoxContainer" parent="Jobs"]
+layout_mode = 1
+offset_left = 14.0
+offset_top = 16.0
+offset_right = 328.0
+offset_bottom = 392.0
+
+[node name="MorningNight" type="HBoxContainer" parent="Jobs/JobsEntitys"]
+layout_mode = 2
+alignment = 1
+
+[node name="MorningLabel" type="Label" parent="Jobs/JobsEntitys/MorningNight"]
+layout_mode = 2
+text = "Dawn"
+
+[node name="ProgressBar" type="ProgressBar" parent="Jobs/JobsEntitys/MorningNight"]
+custom_minimum_size = Vector2(180, 25)
+layout_mode = 2
+show_percentage = false
+
+[node name="NightLabel" type="Label" parent="Jobs/JobsEntitys/MorningNight"]
+layout_mode = 2
+text = "Night"
+
+[node name="VillagerJobs" type="Label" parent="Jobs/JobsEntitys"]
+layout_mode = 2
+theme_override_constants/outline_size = 1
+text = "Village Jobs
+"
+horizontal_alignment = 1
+
+[node name="Food" type="HBoxContainer" parent="Jobs/JobsEntitys"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Jobs/JobsEntitys/Food"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+text = "Foraging Food"
+
+[node name="Number" type="Label" parent="Jobs/JobsEntitys/Food"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="Add" type="Button" parent="Jobs/JobsEntitys/Food"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "+"
+
+[node name="Sub" type="Button" parent="Jobs/JobsEntitys/Food"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = " - "
+
+[node name="ProgressBar" type="ProgressBar" parent="Jobs/JobsEntitys/Food"]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+show_percentage = false
+
+[node name="Sticks" type="HBoxContainer" parent="Jobs/JobsEntitys"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Jobs/JobsEntitys/Sticks"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+text = "Gathering Sticks"
+
+[node name="Number" type="Label" parent="Jobs/JobsEntitys/Sticks"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="Add" type="Button" parent="Jobs/JobsEntitys/Sticks"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "+"
+
+[node name="Sub" type="Button" parent="Jobs/JobsEntitys/Sticks"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = " - "
+
+[node name="ProgressBar" type="ProgressBar" parent="Jobs/JobsEntitys/Sticks"]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+show_percentage = false
+
+[node name="Stones" type="HBoxContainer" parent="Jobs/JobsEntitys"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Jobs/JobsEntitys/Stones"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+text = "Gathering Stones"
+
+[node name="Number" type="Label" parent="Jobs/JobsEntitys/Stones"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="Add" type="Button" parent="Jobs/JobsEntitys/Stones"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "+"
+
+[node name="Sub" type="Button" parent="Jobs/JobsEntitys/Stones"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = " - "
+
+[node name="ProgressBar" type="ProgressBar" parent="Jobs/JobsEntitys/Stones"]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+show_percentage = false
+
+[node name="Mud" type="HBoxContainer" parent="Jobs/JobsEntitys"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Jobs/JobsEntitys/Mud"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+text = "Gathering Mud"
+
+[node name="Number" type="Label" parent="Jobs/JobsEntitys/Mud"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="Add" type="Button" parent="Jobs/JobsEntitys/Mud"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "+"
+
+[node name="Sub" type="Button" parent="Jobs/JobsEntitys/Mud"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = " - "
+
+[node name="ProgressBar" type="ProgressBar" parent="Jobs/JobsEntitys/Mud"]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+show_percentage = false
+
+[node name="Clay" type="HBoxContainer" parent="Jobs/JobsEntitys"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Jobs/JobsEntitys/Clay"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+text = "Gathering Clay"
+
+[node name="Number" type="Label" parent="Jobs/JobsEntitys/Clay"]
+layout_mode = 2
+text = "00"
+horizontal_alignment = 1
+
+[node name="Add" type="Button" parent="Jobs/JobsEntitys/Clay"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "+"
+
+[node name="Sub" type="Button" parent="Jobs/JobsEntitys/Clay"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = " - "
+
+[node name="ProgressBar" type="ProgressBar" parent="Jobs/JobsEntitys/Clay"]
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 2
+show_percentage = false
+
+[connection signal="pressed" from="Jobs/JobsEntitys/Food/Add" to="." method="_food_add_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Food/Sub" to="." method="_food_sub_pressed"]
+[connection signal="changed" from="Jobs/JobsEntitys/Food/ProgressBar" to="." method="_on_progress_bar_changed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Sticks/Add" to="." method="_sticks_add_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Sticks/Sub" to="." method="_sticks_sub_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Stones/Add" to="." method="_stones_add_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Stones/Sub" to="." method="_stones_sub_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Mud/Add" to="." method="_mud_add_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Mud/Sub" to="." method="_mud_sub_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Clay/Add" to="." method="_clay_add_pressed"]
+[connection signal="pressed" from="Jobs/JobsEntitys/Clay/Sub" to="." method="_clay_sub_pressed"]
